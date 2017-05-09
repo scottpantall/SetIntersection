@@ -15,32 +15,17 @@ public class Main {
         while ((line = buffer.readLine()) != null) {
             line = line.trim();
             //System.out.println(line);
-            intersection(line);
+            intersectionWithLists(line);
+            //intersectionWithStreams(line);
+            
         }
     }
     
-    public static void intersection(String line) {
-        String[] lists = line.split(":");
-        
-        
-        /*
-        ArrayList<String> uniques = new ArrayList<>();
-        
-        for(int i = 0; i < numbers.length; i++) {
-            if(!uniques.contains(numbers[i])) {
-                uniques.add(numbers[i]);
-            }
-        }
-        
-        for(String s : uniques) {
-            System.out.print(s);
-            if(uniques.indexOf(s) != uniques.size() - 1) {
-                System.out.print(",");
-            }
-            else {
-                System.out.printf("%n");
-            }
-        }
-                */
+    public static void intersectionWithLists(String line) {
+        String[] lists = line.split(";"); //lists[0] = "1,2,3,4" lists[1] = "4,5,6"
+  
+        //Turning the lists[] strings into arrays then into lists.
+        List<String> firstList = Arrays.asList(lists[0].split(","));
+        List<String> secondList = Arrays.asList(lists[1].split(","));
     }
 }
