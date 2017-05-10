@@ -24,8 +24,25 @@ public class Main {
     public static void intersectionWithLists(String line) {
         String[] lists = line.split(";"); //lists[0] = "1,2,3,4" lists[1] = "4,5,6"
   
-        //Turning the lists[] strings into arrays then into lists.
-        List<String> firstList = Arrays.asList(lists[0].split(","));
-        List<String> secondList = Arrays.asList(lists[1].split(","));
+        //Turning the lists[] strings into arrays then into ArrayLists.
+        List<String> firstList = new ArrayList(Arrays.asList(lists[0].split(",")));
+        List<String> secondList = new ArrayList(Arrays.asList(lists[1].split(",")));
+        
+        firstList.retainAll(secondList);
+        
+        if(firstList.isEmpty())
+            System.out.printf("%n");
+        else {
+            for(String s : firstList) {
+                System.out.print(s);
+                if(firstList.indexOf(s) != firstList.size() - 1) {
+                    System.out.print(",");
+                }
+                else {
+                    System.out.printf("%n");
+                }
+            }
+        }
+        
     }
 }
